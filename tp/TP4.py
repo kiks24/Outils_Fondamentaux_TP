@@ -206,11 +206,111 @@ print("Vérification valide :", ecart < 1e-12)
 
 #Exercice 7.1
 
+import numpy as np
 
 
+def determinant(A, tolerance=1e-14):
+    n = len(A)
+    M = []
+    for i in range(n):
+        ligne = []
+        for j in range(n):
+            ligne.append(A[i][j])
+        M.append(ligne)
+        
+    det = 1.0
+    echanges = 0
+    
+    for k in range(n):
+        meilleure = k
+        valeur_max = abs(M[k][k])
+        for i in range(k + 1, n):
+            if abs(M[i][k]) > valeur_max:
+                valeur_max = abs(M[i][k])
+                meilleure = i
+                
+        if abs(M[meilleure][k]) <= tolerance:
+            return 0.0
+            
+        if meilleure != k:
+            temp = M[k]
+            M[k] = M[meilleure]
+            M[meilleure] = temp
+            echanges = echanges + 1
+            
+        det = det * M[k][k]
+        
+        for i in range(k + 1, n):
+            facteur = M[i][k] / M[k][k]
+            for j in range(k, n):
+                M[i][j] = M[i][j] - facteur * M[k][j]
+                
+    if echanges % 2 == 1:
+        det = -det
+        
+    return det
+
+
+A1 = [[1, 2, 2], [1, 3, -2], [3, 5, 8]]
+A2 = [[1, 2], [2, 4]]
+
+print(determinant(A), float(np.linalg.det(np.array(A, dtype=float))))
+print(determinant([[1, 2], [2, 4]]))
 
 #Exercice 8.1
+from fractions import Fraction
 
+def generer_hilbert(n):
+    matrice = []
+    for i in range(n):
+        ligne = []
+        for j in range(n):
+            ligne.append(Fraction(1, i + j + 1))
+        matrice.append(ligne)
+    return matrice
 
+taille = 12
+H = generer_hilbert(taille)
+
+b = []
+for ligne in H:
+    somme_ligne = sum(ligne)
+    b.append(somme_ligne)
+
+try:
+    resoudre(H, b)
+except ValueError as err:
+    print("Premier essai :", err)
+
+x = resoudre(H, b, tolerance=0)
+print("Résultat exact :", x)
+
+verification = []
+for v in x:
+    verification.append(v == 1)
+
+print(all(verification))
 
 #Exercice 9.1
+
+import numpy as np
+
+def translation(x, y):
+    return np.array([[1.0, 0.0, x],[0.0, 1.0, y],[0.0, 0.0, 1.0]])
+
+def rotation(angle):
+    c = np.cos(angle)
+    s = np.sin(angle)
+    return np.array([[c, -s, 0.0],[s,  c, 0.0],[0.0, 0.0, 1.0]])
+
+point = np.array([1.0, 0.0, 1.0])
+
+t = translation(3, 1)
+r = rotation(np.pi / 2)
+
+res_1 = r.dot(t.dot(point))
+print("1.", np.round(res_1, 10))
+
+
+res_2 = t.dot(r.dot(point))
+print("2.", np.round(res_2, 10))
