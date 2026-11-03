@@ -8,7 +8,7 @@ def diviseurs(n):
     return liste
     
 
-print(diviseurs(28))
+#print(diviseurs(28))
 
 
 #Exercice 2.1: Les deux PGCD
@@ -20,14 +20,14 @@ def pgcd_naif(a,b):
             pgcd = i
     return pgcd
 
-print(pgcd_naif(1071, 462))
+#print(pgcd_naif(1071, 462))
 
 def pgcd(a,b):
     while b != 0:
         a, b = b, a % b
     return a 
 
-print(pgcd(1071,462))
+#print(pgcd(1071,462))
 
         
 #Exercice 3.1
@@ -41,7 +41,7 @@ def est_premier_naif(n):
             return False
     return True
 
-print(est_premier_naif(97), est_premier_naif(91))
+#print(est_premier_naif(97), est_premier_naif(91))
 
 def est_premier(n):
     """Teste la primalité en s'arrêtant à la racine carrée de n."""
@@ -56,7 +56,7 @@ def est_premier(n):
         d = d + 2
     return True
 
-print(est_premier(97), est_premier(91), est_premier(2), est_premier(1))
+#print(est_premier(97), est_premier(91), est_premier(2), est_premier(1))
 
 import time
 
@@ -66,9 +66,9 @@ def duree(fonction, argument):
     fonction(argument)
     return time.perf_counter() - debut
 
-for n in [10_007, 100_003, 1_000_003]:
-    print(f"naif        : {duree(est_premier_naif, n):.4f} s")
-    print(f"jusqu'a rac : {duree(est_premier, n):.6f} s")
+#for n in [10_007, 100_003, 1_000_003]:
+    #print(f"naif        : {duree(est_premier_naif, n):.4f} s")
+    #print(f"jusqu'a rac : {duree(est_premier, n):.6f} s")
 
 #Exercice 4.1
 
@@ -87,7 +87,7 @@ def crible(limite):
     return [n for n in range(limite + 1) if est_premier_tab[n]]
 
 
-print(f"crible       : {len(crible(100_000))} nombres premiers pour {duree(crible, 100_000):.4f} s")
+#print(f"crible       : {len(crible(100_000))} nombres premiers pour {duree(crible, 100_000):.4f} s")
 
 Duree = 0
 n_premiers = 0
@@ -96,7 +96,7 @@ for n in range(1, 100_000):
     if est_premier(n):
         n_premiers += 1
 
-print(f"est_premier      : {n_premiers} nombres premiers pour {Duree: .4f} s")
+#print(f"est_premier      : {n_premiers} nombres premiers pour {Duree: .4f} s")
     
 #Exercice 5.1
 
@@ -109,12 +109,12 @@ def facteurs(n):
                 n = n // i 
     return liste
 
-print(facteurs(360))
+#print(facteurs(360))
 
 produit = 1
 for i in (facteurs(360)):
     produit *= i
-print (produit)
+#print (produit)
 
 #Exercice 6.1
 
@@ -124,10 +124,10 @@ def fibonacci_recursif(n):
         return n
     return fibonacci_recursif(n - 1) + fibonacci_recursif(n - 2)
 
-print([fibonacci_recursif(n) for n in range(15)])
+#print([fibonacci_recursif(n) for n in range(15)])
 
-for n in (20, 25, 30):
-    print(f"fibonnaci_recursif({n})     : {duree(fibonacci_recursif, n): .4f} s")
+#for n in (20, 25, 30):
+    #print(f"fibonnaci_recursif({n})     : {duree(fibonacci_recursif, n): .4f} s")
 
 #Exercice 6.2
 
@@ -139,8 +139,8 @@ def fibonacci_appels(n):
         return n
     return fibonacci_appels(n - 1) + fibonacci_appels(n - 2)
 
-print(fibonacci_appels(30))
-print(compteur[1])
+#print(fibonacci_appels(30))
+#print(compteur[1])
 
 
 #Exercice 6.3
@@ -151,8 +151,8 @@ def fibonnaci(n):
         precedente , courante = courante, precedente + courante
     return precedente
 
-print(all(fibonnaci(n) == fibonacci_recursif(n) for n in range(1,25)))
-print(f"{len(str(fibonnaci(10_000)))} chiffres pour {duree(fibonnaci, 10_000): .6f} s")
+#print(all(fibonnaci(n) == fibonacci_recursif(n) for n in range(1,25)))
+#print(f"{len(str(fibonnaci(10_000)))} chiffres pour {duree(fibonnaci, 10_000): .6f} s")
 
 #Exercice 7.1
 
@@ -162,9 +162,9 @@ def euclide_etendu(a, b):
     g, u, v = euclide_etendu(b, a % b)
     return g, v, u - (a // b) * v  
 
-print(euclide_etendu(1071, 462))
+#print(euclide_etendu(1071, 462))
 g, u, v = euclide_etendu(1071, 462)
-print(f"1071 * {u} + 462 * {v} = {1071 * u + 462 * v} ")
+#print(f"1071 * {u} + 462 * {v} = {1071 * u + 462 * v} ")
 
 #Exercice 7.2
 
@@ -185,9 +185,9 @@ def puissance_mod(a, e, n):
     return resultat
 
 a, e, n = 7, 10  ** 7, 1_000_003
-print(puissance_mod_naive(a, e, n))
-print(puissance_mod(a, e, n))
-print(pow(a, e, n))
+#print(puissance_mod_naive(a, e, n))
+#print(puissance_mod(a, e, n))
+#print(pow(a, e, n))
 
 debut = time.perf_counter()
 puissance_mod_naive(a, e, n)
@@ -195,4 +195,4 @@ t_naive = time.perf_counter() - debut
 debut = time.perf_counter()
 puissance_mod(a, e, n)
 t_rapide = time.perf_counter() - debut
-print(f"naive {t_naive:.3f} s | rapide {t_rapide:.6f} s")
+#print(f"naive {t_naive:.3f} s | rapide {t_rapide:.6f} s")
