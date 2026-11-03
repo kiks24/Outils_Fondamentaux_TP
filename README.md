@@ -20,12 +20,12 @@ L'objectif est de mettre en pratique les notions théoriques et algorithmiques a
 
 Le code du projet s'articule autour de trois grands blocs directement issus des compétences développées en TP :
 
-a) Algèbre linéaire et matrices: Le projet intègre une fonction de résolution de systèmes $Ax = b$ basée sur l'algorithme du pivot de Gauss avec recherche de pivot partiel. Cette approche est utilisée pour modéliser et résoudre un problème d'allocation budgétaire ou de répartition financière préalable. 
+**a) Algèbre linéaire et matrices:** Le projet intègre une fonction de résolution de systèmes $Ax = b$ basée sur l'algorithme du pivot de Gauss avec recherche de pivot partiel. Cette approche est utilisée pour modéliser et résoudre un problème d'allocation budgétaire ou de répartition financière préalable. 
 
-b) Recherche de racines et polynômes: Le cœur du simulateur repose sur la résolution d'un polynôme financier reliant le capital emprunté, la durée et les mensualités afin de déterminer le taux d'intérêt exact. 
+**b) Recherche de racines et polynômes:** Le cœur du simulateur repose sur la résolution d'un polynôme financier reliant le capital emprunté, la durée et les mensualités afin de déterminer le taux d'intérêt exact. 
 Deux méthodes ont été implémentées et comparées : la méthode de la Dichotomie et la méthode de Newton.
 
-c) Intégration numérique: L'estimation du coût cumulé des intérêts payés à la banque au fil du temps est réalisée à l'aide de la méthode des trapèzes, permettant d'approcher l'aire sous la courbe d'amortissement de manière discrète.
+**c) Intégration numérique:** L'estimation du coût cumulé des intérêts payés à la banque au fil du temps est réalisée à l'aide de la méthode des trapèzes, permettant d'approcher l'aire sous la courbe d'amortissement de manière discrète.
 
 ## 4. Résultats de l'Exécution
 
@@ -43,9 +43,9 @@ Répartition des investissements : [12500.0, 15000.0, 8125.0]
 
 === PARTIE FINANCIERE (TAUX DE PRET) ===
 
-Dichotomie : Taux annuel = 3.826% (28 itérations) - 
-Newton     : Taux annuel = 3.826% (4 itérations) - 
-Coût total estimé des intérêts (Trapèzes) : 73150.42 €
+**Dichotomie :** Taux annuel = 3.826% (28 itérations) - 
+**Newton     :** Taux annuel = 3.826% (4 itérations) - 
+**Coût total estimé des intérêts (Trapèzes) :** 73150.42 €
 
 En complément, le script génère une visualisation graphique via matplotlib illustrant l'évolution du nombre d'itérations des deux méthodes de recherche de racines selon différentes hypothèses de mensualités.
 
