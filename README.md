@@ -8,7 +8,7 @@
 
 ## 1. Introduction et Objectifs du Projet
 
-Ce dépôt regroupe les travaux pratiques organisés dans le dossier **tp/** ainsi qu'un projet personnel réalisés dans le cadre du module (dossier **projet/**).
+Ce dépôt regroupe les travaux pratiques (dossier **tp/**) ainsi qu'un projet personnel (dossier **projet/**) réalisés dans le cadre du module.
 
 Le projet consiste à développer un **simulateur et analyseur de prêts immobiliers**. 
 L'objectif est de mettre en pratique les notions théoriques et algorithmiques abordées en TP à travers un cas d'application concret, en combinant :
