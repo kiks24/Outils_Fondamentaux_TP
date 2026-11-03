@@ -43,8 +43,8 @@ Répartition des investissements : [12500.0, 15000.0, 8125.0]
 
 === PARTIE FINANCIERE (TAUX DE PRET) ===
 
-**Dichotomie :** Taux annuel = 3.826% (28 itérations) - 
-**Newton     :** Taux annuel = 3.826% (4 itérations) - 
+**Dichotomie :** Taux annuel = 3.826% -- 
+**Newton     :** Taux annuel = 3.826% --  
 **Coût total estimé des intérêts (Trapèzes) :** 73150.42 €
 
 En complément, le script génère une visualisation graphique via matplotlib illustrant l'évolution du nombre d'itérations des deux méthodes de recherche de racines selon différentes hypothèses de mensualités.
