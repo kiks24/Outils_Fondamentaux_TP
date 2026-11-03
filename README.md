@@ -31,8 +31,8 @@ Deux méthodes ont été implémentées et comparées : la méthode de la Dichot
 
 Prêt immobilier :
 
-Capital emprunté : $180\,000$ €
-Mensualité : $1\,000$ €
+Capital emprunté : $180\,000$ € -- 
+Mensualité : $1\,000$ € --
 Durée : $240$ mois (20 ans)
 
 Résultats affichés dans la console:
