@@ -20,7 +20,7 @@ L'objectif est de mettre en pratique les notions théoriques et algorithmiques a
 
 Le code du projet s'articule autour de trois grands blocs directement issus des compétences développées en TP :
 
-**a) Algèbre linéaire et matrices:** Le projet intègre une fonction de résolution de systèmes $Ax = b$ basée sur l'algorithme du pivot de Gauss avec recherche de pivot partiel. Cette approche est utilisée pour modéliser et résoudre un problème d'allocation budgétaire ou de répartition financière préalable. 
+**a) Algèbre linéaire et matrices:** Le projet intègre une fonction de résolution de systèmes linéaires basée sur l'algorithme du pivot de Gauss avec recherche de pivot partiel. Cette approche est utilisée pour modéliser et résoudre un problème d'allocation budgétaire ou de répartition financière préalable. 
 
 **b) Recherche de racines et polynômes:** Le cœur du simulateur repose sur la résolution d'un polynôme financier reliant le capital emprunté, la durée et les mensualités afin de déterminer le taux d'intérêt exact. 
 Deux méthodes ont été implémentées et comparées : la méthode de la Dichotomie et la méthode de Newton.
